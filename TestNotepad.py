@@ -17,8 +17,13 @@ optionTwo = ""
 try:
     readFile = open(filename, "r")
     fileAlreadyExists = True
-except:
+except ValueError:
     readFile = open(filename, "w+")
+except Exception as e:
+    LogFile = open("ErrorLog.txt", "a+")
+    ErrorString = e + "\n"
+    LogFile.write(ErrorString)
+    print("An unhandled exception has caught. It is logged in ErrorLog.txt.")
 
 readFile.close()
 
