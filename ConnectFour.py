@@ -98,8 +98,6 @@ def winCheck (boardArr, playNumber):
     return False
 
 
-
-
 BoardArray = []
 CreateBoard(BoardArray)
 
